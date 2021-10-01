@@ -5,7 +5,6 @@ pilotos = ["Verstappen", "Hamilton", "Bottas", "Norris", "Perez", "Leclerc",
            "Giovinazzi","Schumacher", "Mazepin"]
 puntos = [224.5, 221.5, 123, 114, 108, 92, 89.5, 66, 56, 46, 44, 35, 18,
           18, 13, 7, 2, 1, 0, 0]
-print(pilotos[15])
 # Función para calcular puntos de pilotos 
 def puntos_pilotos(puntos, piloto):
     return puntos + piloto
