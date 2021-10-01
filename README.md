@@ -1,4 +1,4 @@
-# Calculadora de CAmpeonato F1 2021
+# Calculadora de Campeonato F1 2021
 ## Contexto
 Este año ha sido uno de los más reñidos para el campeonato de pilotos (WDC) de la Formula 1. Max Verstappen y Lewis Hamilton solo están separados por 8 puntos. Mientras que el campeonato de constructores solo por 12 puntos.
 
