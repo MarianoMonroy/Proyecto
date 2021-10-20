@@ -8,8 +8,8 @@ puntos = [224.5, 221.5, 123, 114, 108, 92, 89.5, 66, 56, 46, 44, 35, 18,
 total = []
 
 # Función para calcular puntos de pilotos 
-def puntos_pilotos(puntos, piloto):
-    return puntos + piloto
+def puntos_pilotos(punto, piloto):
+    return punto + piloto
 
 #Función para calcular puntos de los equipo
 def puntos_equipo(piloto1, piloto2):
@@ -41,14 +41,14 @@ def diferencia_puntos_a_lider(piloto):
     else:
         return "Tienen los mismos puntos"
     
-#Función para imprimir campeonato de pilotos final 
-def imprimir_info():
+#Función para imprimir campeonato de pilotos 
+def imprimir_info(lista1, lista2):
     i = 0
     while i < 20:
         j = 0
         while j < 20:
             if (i==j):
-                print(pilotos[i],"tiene", total[j],"puntos")
+                print(lista1[i],"tiene", lista2[j],"puntos")
                 j = j +1
             i = i +1
     return ("")
@@ -56,81 +56,89 @@ def imprimir_info():
 #función que imprime la diferencia al líder del campeonato
 def imprime_diferencia():
     i =0
-    while i < 19:
+    while i < 20:
         j = 0
         while j < 20:
             if i == j:
                 print("La diferencia de ", pilotos[i]," al líder es de", \
                       diferencia_puntos_a_lider(total[j]),"puntos")
-                j = j +1
-            i = i+1
+                j = j + 1
+            i = i + 1
     return("")
-#Función que recibe el nombre del piloto y regresa el índice en la lista, para
-#que pueda ser en la función posición puntos
-def nombre_indice(nombre ,lista):
-    for nom in lista:
-        if nombre == nom:
-            indice = lista.index(nombre)
-    return indice
 
-#Función para agregar las posiciones y pilotos a una lista en base a sus indices
-def posicion_puntos( ):
+#Función para agregar las posiciones y pilotos a una lista en base a sus índices
+def posicion_puntos():
     i = 0
-    while i < 19:
-        posicion = int(input("En que posición quedó el piloto?"))
-        nombre = str(input("Nombre del piloto respecto a la lista"))
-        x = nombre_indice(nombre ,pilotos)
+    while i < 20:
         
-        if posicion == 1 :
-            totalp = puntos_pilotos(25, puntos[x])
-            total.insert(x, totalp)
-            i = i +1
+        print("En que lugar quedó", pilotos[i],"?")
+        posicion = int(input())
+        
+        if posicion == 1:
+            totalp = puntos_pilotos(25, puntos[i])
+            total.append(totalp)
+            i = i + 1
+            
         elif posicion == 2:
-            totalp = puntos_pilotos(18, puntos[x])
-            total.insert(x, totalp)
-            i = i +1
+            totalp = puntos_pilotos(18, puntos[i])
+            total.append(totalp)
+            i = i + 1
+            
         elif posicion == 3:
-            totalp = puntos_pilotos(15, puntos[x])
-            total.insert(x, totalp)
-            i = i +1
+            totalp = puntos_pilotos(15, puntos[i])
+            total.append(totalp)
+            i = i + 1
+            
         elif posicion == 4:
-            totalp = puntos_pilotos(12, puntos[x])
-            total.insert(x, totalp)
-            i = i +1
+            totalp = puntos_pilotos(12, puntos[i])
+            total.append(totalp)
+            i = i + 1
+            
         elif posicion == 5:
-            totalp = puntos_pilotos(10, puntos[x])
-            total.insert(x, totalp)
-            i = i +1
+            totalp = puntos_pilotos(10, puntos[i])
+            total.append(totalp)
+            i = i + 1
+            
         elif posicion == 6:
-            totalp = puntos_pilotos(8, puntos[x])
-            total.insert(x, totalp)
+            totalp = puntos_pilotos(8, puntos[i])
+            total.append(totalp)
+            i = i + 1
+            
         elif posicion == 7:    
-            totalp = puntos_pilotos(6, puntos[x])
-            total.insert(x, totalp)
-            i = i +1
+            totalp = puntos_pilotos(6, puntos[i])
+            total.append(totalp)
+            i = i + 1
+            
         elif posicion == 8:
-            totalp = puntos_pilotos(4, puntos[x])
-            total.insert(x, totalp)
-            i = i +1
+            totalp = puntos_pilotos(4, puntos[i])
+            total.append(totalp)
+            i = i + 1
+            
         elif posicion == 9:
-            totalp = puntos_pilotos(2, puntos[x])
-            total.insert(x, totalp)
-            i = i +1
+            totalp = puntos_pilotos(2, puntos[i])
+            total.append(totalp)
+            i = i + 1
+            
         elif posicion == 10:
-            totalp = puntos_pilotos(1, puntos[x])
-            total.insert(x, totalp)
-            i = i +1
+            totalp = puntos_pilotos(1, puntos[i])
+            total.append(totalp)
+            i = i + 1
+            
         else:
-            totalp = puntos_pilotos(0, puntos[x])
-            total.insert(x, totalp)
-            i = i +1
+            totalp = puntos_pilotos(0, puntos[i])
+            total.append(totalp)
+            i = i + 1
     return total
+
+#Se imprime el campeonato antes de la carrera 
+print("\n Campeonato de Pilotos")
+print(imprimir_info(pilotos, puntos))
+
 print(posicion_puntos())
 
 #Imprime los Puntos totales por piloto
-posiciones = [pilotos, total]
 print("\n Campeonato de Pilotos")
-print(imprimir_info())
+print(imprimir_info(pilotos, total))
 
 #Puntos por equipo
 print("Campeonato de Constructores")
