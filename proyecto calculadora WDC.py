@@ -9,14 +9,32 @@ total = []
 
 # Función para calcular puntos de pilotos 
 def puntos_pilotos(punto, piloto):
+    """
+    (uso de operadores, uso de funciones)
+    recibe: punto valor numérico, piloto valor numérico
+    suma 2 valores
+    devuelve: resultado de operación númerico
+    """
     return punto + piloto
 
 #Función para calcular puntos de los equipo
 def puntos_equipo(piloto1, piloto2):
+    """
+    (uso de operadores, uso de funciones)
+    recibe: punto valor numérico, piloto valor numérico
+    suma 2 valores
+    devuelve: resultado de operación númerico
+    """
     return piloto1 + piloto2
 
 #Funcion para saber quien es el líder del campeonato
 def lider_campeonato(piloto1, piloto2):
+    """
+    (uso de funciones, uso de condicionales)
+    recibe: piloto1 valor numérico, piloto2 valor numérico
+    Decide a base de condicionales, que piloto tiene mayor cantidad de puntos
+    devuelve: al piloto con mayor cantidad de puntos
+    """
     if piloto1 > piloto2:
         return "Verstappen con " , piloto1, "puntos"
     elif piloto2 > piloto1:
@@ -24,6 +42,13 @@ def lider_campeonato(piloto1, piloto2):
     
 #Función para calcular la diferencia de puntos entre líder y pilotos
 def diferencia_puntos_a_lider(piloto):
+    """
+    (uso de condicionales, uso de ciclos, uso de operadores)
+    recibe: piloto, valor numérico
+    Dependiendo del líder del campeonato se introduce un piloto y este le
+    resta los puntos de diferencia al lider para conocer dicha diferencia
+    devuelve: la diferencia entre piloto y lider de campeonato
+    """
     if total[0] >= total[1]:
         i = piloto
         acum = total[0]
@@ -43,6 +68,12 @@ def diferencia_puntos_a_lider(piloto):
     
 #Función para imprimir campeonato de pilotos 
 def imprimir_info(lista1, lista2):
+    """
+    (uso de ciclos, uso de ciclos anidados, uso de condicionales)
+    recibe: lista1 lista de valores, lista2 lista de valores
+    imprime el nombre y puntos correspondientes de cada piloto
+    devuelve: nada, solo se usa para imprimir
+    """
     i = 0
     while i < 20:
         j = 0
@@ -55,6 +86,12 @@ def imprimir_info(lista1, lista2):
 
 #función que imprime la diferencia al líder del campeonato
 def imprime_diferencia():
+    """
+    (uso de ciclos, uso de condicionales)
+    recibe: nada
+    Imprime la diferencia al lider de campeonato por piloto
+    devuelve: nada, solo imprime 
+    """
     i =0
     while i < 20:
         j = 0
@@ -68,6 +105,14 @@ def imprime_diferencia():
 
 #Función para agregar las posiciones y pilotos a una lista en base a sus índices
 def posicion_puntos():
+    """
+    (uso de ciclos, uso de condicionales, uso de listas)
+    recibe: nada, ya que el input debe estar adentro del ciclo while para que
+    funcione.
+    Pregunta por la posición en la que finalizó el piloto usa una función para
+    sumar los valores y agrega el resultado a una lista
+    devuelve: lista con los valores ya sumados 
+    """
     i = 0
     while i < 20:
         
@@ -155,5 +200,5 @@ print("Haas tiene ", puntos_equipo(total[18], total[19]), "puntos")
 #Para saber quien es el lider
 print("\n El lider del campeonato es ",lider_campeonato(total[0], total[1]))
 #Diferencia de puntos entre pilotos
-("\n Diferencia de puntos respecto al líder")
+print("\n Diferencia de puntos respecto al líder")
 print(imprime_diferencia())
